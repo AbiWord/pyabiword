@@ -1,0 +1,20 @@
+;; -*- scheme -*-
+; object definitions ...
+
+(define-object Canvas
+  (in-module "Abi")
+  (c-name "AbiWidget")
+  (parent "GtkBin")
+  (gtype-id "ABI_TYPE_WIDGET")
+)
+
+;; Enumerations and flags ...
+
+
+;; From abiwidget.h
+
+(define-function abi_widget_new
+  (c-name "abi_widget_new")
+  (is-constructor-of "AbiWidget")
+  (return-type "GtkWidget*")
+)
