@@ -21,7 +21,6 @@ abiword_la_LDFLAGS = -module -avoid-version
 abiword_la_LIBADD = $(PYGTK_LIBS) $(ABIWORD_LIBS)
 abiword_la_SOURCES = pyabiwordmodule.cpp
 nodist_abiword_la_SOURCES = pyabiword.c
-pyabiword.c: pyabiword.defs pyabiword.override
 
 BUILT_SOURCES = pyabiword.c
 CLEANFILES = pyabiword.c

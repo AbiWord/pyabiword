@@ -18,27 +18,28 @@ AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_C_CONST
 
-PKG_CHECK_MODULES(ABIWORD, abiword-2.6)
+abi_pkg='abiword-2.5'
+PKG_CHECK_MODULES(ABIWORD, "$abi_pkg")
 
 # HACK to include all the stuff we need.
 # Just so all the current whizzbang is not stopped by ever build breaking Rob.
 AC_MSG_CHECKING([additional abiword includes])
-abi_base_includedir=`pkg-config --variable=includedir abiword-2.6`"/abiword-2.6"
+abi_base_includedir=`pkg-config --variable=includedir $abi_pkg`"/$abi_pkg"
 abi_sub_includes=" \
- -I ${abi_base_includedir}/ev/xp 	\
- -I ${abi_base_includedir}/ev/unix	\
- -I ${abi_base_includedir}/gr/xp	\
- -I ${abi_base_includedir}/gr/unix	\
- -I ${abi_base_includedir}/util/xp	\
- -I ${abi_base_includedir}/util/unix	\
- -I ${abi_base_includedir}/xap/xp	\
- -I ${abi_base_includedir}/xap/unix	\
- -I ${abi_base_includedir}/text/fmt/xp	\
- -I ${abi_base_includedir}/text/ptbl/xp	\
- -I ${abi_base_includedir}/spell/xp	\
- -I ${abi_base_includedir}/ap/xp	\
- -I ${abi_base_includedir}/ap/unix	\
- -I ${abi_base_includedir}/impexp/xp	\
+ -I ${abi_base_includedir}/ev/xp \
+ -I ${abi_base_includedir}/ev/unix \
+ -I ${abi_base_includedir}/gr/xp \
+ -I ${abi_base_includedir}/gr/unix \
+ -I ${abi_base_includedir}/util/xp \
+ -I ${abi_base_includedir}/util/unix \
+ -I ${abi_base_includedir}/xap/xp \
+ -I ${abi_base_includedir}/xap/unix \
+ -I ${abi_base_includedir}/text/fmt/xp \
+ -I ${abi_base_includedir}/text/ptbl/xp \
+ -I ${abi_base_includedir}/spell/xp \
+ -I ${abi_base_includedir}/ap/xp \
+ -I ${abi_base_includedir}/ap/unix \
+ -I ${abi_base_includedir}/impexp/xp \
  -I ${abi_base_includedir}/impexp/unix"
 
 ABIWORD_CFLAGS="${ABIWORD_CFLAGS} ${abi_sub_includes}"

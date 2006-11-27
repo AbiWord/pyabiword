@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 # Run this to generate all the initial makefiles, etc.
 
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
+pushd $srcdir
 
 REQUIRED_AUTOMAKE_VERSION=1.8
 
@@ -464,6 +465,8 @@ for configure_ac in $configure_files; do
 	cd "$topdir"
     fi
 done
+
+popd
 
 conf_flags="--enable-maintainer-mode"
 
