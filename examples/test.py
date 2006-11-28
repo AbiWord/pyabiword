@@ -1,24 +1,20 @@
 #!/usr/bin/python
-import sys
 
+import sys
 import pygtk
 pygtk.require('2.0')
 import gtk
 import abiword
 
-gtk.gdk.threads_init()
-
 window = gtk.Window()
 window.set_default_size(640, 480)
+window.connect('delete-event', gtk.main_quit)
 
-abicanvas = abiword.Canvas()
+abi = abiword.Canvas()
+window.add(abi)
+window.show_all()
 
-window.add(abicanvas)
-
-abicanvas.show()
-window.show()
-
-abicanvas.set_property("AbiWidget--map-to-screen", True)
-abicanvas.set_property("AbiWidget--load-file", "test.abw")
+abi.set_property("map-to-screen", True)
+abi.set_property("load-file", "test.abw")
 
 gtk.main()
