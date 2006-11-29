@@ -46,9 +46,10 @@ class SugarAbiWord:
 	self.abiword_canvas.set_property("map-to-screen", True)
 	self.abiword_canvas.set_property("load-file", "")
 	self.abiword_canvas.show()
-        mainWindow.connect("destroy",self._destroy_cb)
+        mainWindow.connect("delete_event",self._delete_cb)
 
-    def _destroy_cb(self,me):
+    def _delete_cb(self,me,p):
+        print "Doing delete \n"
         self.abiword_canvas.set_property("save-immediate","")
         
     def main(self):
