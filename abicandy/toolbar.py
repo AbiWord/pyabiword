@@ -26,7 +26,6 @@ class Toolbar(gtk.Toolbar):
 		self.set_style(gtk.TOOLBAR_ICONS)
 
 		self._abiword_canvas = abiword_canvas
-		self._abiword_canvas.connect("destroy",self._destroy_cb)
 	
 		self._open = gtk.ToolButton()
 		self._open.set_icon_name('gtk-open')
