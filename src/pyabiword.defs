@@ -8,6 +8,7 @@
   (gtype-id "ABI_TYPE_WIDGET")
 )
 
+
 ;; Enumerations and flags ...
 
 
@@ -18,3 +19,583 @@
   (is-constructor-of "AbiWidget")
   (return-type "GtkWidget*")
 )
+
+
+(define-method load_file
+  (of-object "AbiWidget")
+  (c-name "abi_widget_load_file")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "fname")
+  )
+)
+
+(define-method align_center
+  (of-object "AbiWidget")
+  (c-name "abi_widget_align_center")
+  (return-type "gboolean")
+)
+
+(define-method align_justify
+  (of-object "AbiWidget")
+  (c-name "abi_widget_align_justify")
+  (return-type "gboolean")
+)
+
+(define-method align_left
+  (of-object "AbiWidget")
+  (c-name "abi_widget_align_left")
+  (return-type "gboolean")
+)
+
+(define-method align_right
+  (of-object "AbiWidget")
+  (c-name "abi_widget_align_right")
+  (return-type "gboolean")
+)
+
+
+(define-method copy
+  (of-object "AbiWidget")
+  (c-name "abi_widget_copy")
+  (return-type "gboolean")
+)
+
+(define-method cut
+  (of-object "AbiWidget")
+  (c-name "abi_widget_cut")
+  (return-type "gboolean")
+)
+
+
+(define-method paste
+  (of-object "AbiWidget")
+  (c-name "abi_widget_paste")
+  (return-type "gboolean")
+)
+
+
+(define-method paste_special
+  (of-object "AbiWidget")
+  (c-name "abi_widget_paste_special")
+  (return-type "gboolean")
+)
+
+
+(define-method select_all
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_all")
+  (return-type "gboolean")
+)
+
+
+(define-method select_block
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_block")
+  (return-type "gboolean")
+)
+
+
+(define-method select_line
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_line")
+  (return-type "gboolean")
+)
+
+
+(define-method select_word
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_word")
+  (return-type "gboolean")
+)
+
+
+(define-method undo
+  (of-object "AbiWidget")
+  (c-name "abi_widget_undo")
+  (return-type "gboolean")
+)
+
+(define-method redo
+  (of-object "AbiWidget")
+  (c-name "abi_widget_redo")
+  (return-type "gboolean")
+)
+
+
+(define-method insert_data
+  (of-object "AbiWidget")
+  (c-name "abi_widget_insert_data")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "data")
+  )
+)
+
+
+(define-method insert_space
+  (of-object "AbiWidget")
+  (c-name "abi_widget_insert_space")
+  (return-type "gboolean")
+)
+
+
+(define-method delete_bob
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_bob")
+  (return-type "gboolean")
+)
+
+(define-method delete_bod
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_bod")
+  (return-type "gboolean")
+)
+
+(define-method delete_bol
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_bol")
+  (return-type "gboolean")
+)
+
+(define-method delete_bow
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_bow")
+  (return-type "gboolean")
+)
+
+
+(define-method delete_eob
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_eob")
+  (return-type "gboolean")
+)
+
+(define-method delete_eod
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_eod")
+  (return-type "gboolean")
+)
+
+(define-method delete_eol
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_eol")
+  (return-type "gboolean")
+)
+
+(define-method delete_eow
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_eow")
+  (return-type "gboolean")
+)
+
+(define-method delete_left
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_left")
+  (return-type "gboolean")
+)
+
+
+(define-method delete_right
+  (of-object "AbiWidget")
+  (c-name "abi_widget_delete_right")
+  (return-type "gboolean")
+)
+
+(define-method edit_header
+  (of-object "AbiWidget")
+  (c-name "abi_widget_edit_header")
+  (return-type "gboolean")
+)
+
+(define-method edit_footer
+  (of-object "AbiWidget")
+  (c-name "abi_widget_edit_footer")
+  (return-type "gboolean")
+)
+
+(define-method file_open
+  (of-object "AbiWidget")
+  (c-name "abi_widget_file_open")
+  (return-type "gboolean")
+)
+
+(define-method file_save
+  (of-object "AbiWidget")
+  (c-name "abi_widget_file_save")
+  (return-type "gboolean")
+)
+
+(define-method remove_header
+  (of-object "AbiWidget")
+  (c-name "abi_widget_remove_header")
+  (return-type "gboolean")
+)
+
+(define-method remove_footer
+  (of-object "AbiWidget")
+  (c-name "abi_widget_remove_footer")
+  (return-type "gboolean")
+)
+
+
+(define-method save_immediate
+  (of-object "AbiWidget")
+  (c-name "abi_widget_save_immediate")
+  (return-type "gboolean")
+)
+
+(define-method select_bob 
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_bob")
+  (return-type "gboolean")
+)
+    
+(define-method select_bod
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_bod")
+  (return-type "gboolean")
+)
+    
+(define-method select_bol
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_bol")
+  (return-type "gboolean")
+)
+    
+(define-method select_bow
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_bow")
+  (return-type "gboolean")
+)
+    
+(define-method select_eob
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_eob")
+  (return-type "gboolean")
+)
+    
+(define-method select_eod
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_eod")
+  (return-type "gboolean")
+)
+    
+(define-method select_eol
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_eol")
+  (return-type "gboolean")
+)
+    
+(define-method select_eow
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_eow")
+  (return-type "gboolean")
+)
+
+    
+(define-method select_left
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_left")
+  (return-type "gboolean")
+)
+    
+(define-method select_next_line
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_next_line")
+  (return-type "gboolean")
+)
+    
+(define-method select_page_down
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_page_down")
+  (return-type "gboolean")
+)
+    
+(define-method select_page_up
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_page_up")
+  (return-type "gboolean")
+)
+
+    
+(define-method select_prev_line
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_prev_line")
+  (return-type "gboolean")
+)
+    
+(define-method select_right
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_right")
+  (return-type "gboolean")
+)
+    
+(define-method select_screen_down
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_screen_down")
+  (return-type "gboolean")
+)
+    
+(define-method select_screen_up
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_screen_up")
+  (return-type "gboolean")
+)
+    
+(define-method select_to_xy
+  (of-object "AbiWidget")
+  (c-name "abi_widget_select_to_xy")
+  (return-type "gboolean")
+  (parameters
+    '("gint32" "x")
+    '("gint32" "y")
+  )
+)
+    
+(define-method toggle_bold
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_bold")
+  (return-type "gboolean")
+)
+
+    
+(define-method toggle_underline
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_underline")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_bottomline
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_bottomline")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_insert_mode
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_insert_mode")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_italic
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_italic")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_overline
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_overline")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_plain
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_plain")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_strike
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_strike")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_sub
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_sub")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_super
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_super")
+  (return-type "gboolean")
+)
+
+    
+(define-method toggle_toplne
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_topline")
+  (return-type "gboolean")
+)
+    
+(define-method toggle_unindent
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_unindent")
+  (return-type "gboolean")
+)
+    
+(define-method view_formatting_marks
+  (of-object "AbiWidget")
+  (c-name "abi_widget_view_formatting_marks")
+  (return-type "gboolean")
+)
+    
+(define-method view_print_layout
+  (of-object "AbiWidget")
+  (c-name "abi_widget_view_print_layout")
+  (return-type "gboolean")
+)
+    
+(define-method view_normal_layout
+  (of-object "AbiWidget")
+  (c-name "abi_widget_view_normal_layout")
+  (return-type "gboolean")
+)
+    
+(define-method view_online_layout
+  (of-object "AbiWidget")
+  (c-name "abi_widget_view_online_layout")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_bob
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_bob")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_bod
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_bod")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_bol
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_bol")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_bop
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_bop")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_bow
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_bow")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_eob
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_eob")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_eod
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_eod")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_eol
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_eol")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_eow
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_eow")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_left
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_left")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_next_line
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_next_line")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_next_page
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_next_page")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_next_screen
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_next_screen")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_prev_line
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_prev_line")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_prev_page
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_prev_page")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_prev_screen
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_prev_screen")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_right
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_right")
+  (return-type "gboolean")
+)
+    
+(define-method moveto_xy
+  (of-object "AbiWidget")
+  (c-name "abi_widget_moveto_to_xy")
+  (return-type "gboolean")
+  (parameters
+    '("gint32" "x")
+    '("gint32" "y")
+  )
+)
+    
+(define-method zoom_100
+  (of-object "AbiWidget")
+  (c-name "abi_widget_zoom_100")
+  (return-type "gboolean")
+)
+    
+(define-method zoom_200
+  (of-object "AbiWidget")
+  (c-name "abi_widget_zoom_200")
+  (return-type "gboolean")
+)
+    
+(define-method zoom_50
+  (of-object "AbiWidget")
+  (c-name "abi_widget_zoom_50")
+  (return-type "gboolean")
+)
+    
+(define-method zoom_75
+  (of-object "AbiWidget")
+  (c-name "abi_widget_zoom_75")
+  (return-type "gboolean")
+)
+    
+(define-method zoom_whole
+  (of-object "AbiWidget")
+  (c-name "abi_widget_zoom_whole")
+  (return-type "gboolean")
+)
+    
+(define-method zoom_width
+  (of-object "AbiWidget")
+  (c-name "abi_widget_zoom_width")
+  (return-type "gboolean")
+)
+

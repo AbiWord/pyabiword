@@ -93,39 +93,43 @@ class Toolbar(gtk.Toolbar):
 		self.insert(self._align_fill, -1)
 		self._align_fill.show()
 
+		self._abiword_canvas.connect("bold",self._isBold_cb)
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
 		separator.set_draw(True)
 		self.insert(separator, -1)
 		separator.show()
+
+	def _isBold_cb(self,abi,b):
+		print("Bold state changed to",b)
 		
 	def _open_cb(self, button):
-		self._abiword_canvas.set_property("file-open","")
+		self._abiword_canvas.file_open()
 
 	def _save_cb(self, button):
-		self._abiword_canvas.set_property("file-save","")
+		self._abiword_canvas.file_save()
 
 	def _undo_cb(self, button):
-		self._abiword_canvas.set_property("undo","")
+		self._abiword_canvas.undo()
 
 	def _redo_cb(self, button):
-		self._abiword_canvas.set_property("redo","")
+		self._abiword_canvas.redo()
 
 	def _underline_cb(self, button):
-		self._abiword_canvas.set_property("toggle-uline","")
+		self._abiword_canvas.toggle_underline()
 
 	def _bold_cb(self, button):
-		self._abiword_canvas.set_property("toggle-bold","")
+		self._abiword_canvas.toggle_bold()
 
 	def _align_left_cb(self, button):
-		self._abiword_canvas.set_property("align-left","")
+		self._abiword_canvas.align_left()
 
 	def _align_center_cb(self, button):
-		self._abiword_canvas.set_property("align-center","")
+		self._abiword_canvas.align_center()
 
 	def _align_right_cb(self, button):
-		self._abiword_canvas.set_property("align-right","")
+		self._abiword_canvas.align_right()
 
 	def _align_fill_cb(self, button):
-		self._abiword_canvas.set_property("align-justify","")
+		self._abiword_canvas.align_justify()
 

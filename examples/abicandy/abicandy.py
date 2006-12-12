@@ -43,14 +43,13 @@ class SugarAbiWord:
 	toolbar.show()
 
 	hbox.add(self.abiword_canvas)
-	self.abiword_canvas.set_property("map-to-screen", True)
-	self.abiword_canvas.set_property("load-file", "")
+	self.abiword_canvas.load_file("")
 	self.abiword_canvas.show()
         mainWindow.connect("delete_event",self._delete_cb)
 
     def _delete_cb(self,me,p):
         print "Doing delete \n"
-        self.abiword_canvas.set_property("save-immediate","")
+        self.abiword_canvas.save_immediate()
         
     def main(self):
         gtk.main()
