@@ -76,27 +76,32 @@ class Toolbar(gtk.Toolbar):
 
 		self._align_left = gtk.ToggleToolButton()
 		self._align_left.set_icon_name('gtk-justify-left')
-		self._align_left.connect("clicked", self._align_left_cb)
+		self._align_left_id = self._align_left.connect("clicked", self._align_left_cb)
 		self.insert(self._align_left, -1)
 		self._align_left.show()
+		self._abiword_canvas.connect("left-align",self._isLeftAlign_cb)
 
 		self._align_center = gtk.ToggleToolButton()
 		self._align_center.set_icon_name('gtk-justify-center')
-		self._align_center.connect("clicked", self._align_center_cb)
+		self._align_center_id = self._align_center.connect("clicked", self._align_center_cb)
 		self.insert(self._align_center, -1)
 		self._align_center.show()
+		self._abiword_canvas.connect("center-align",self._isCenterAlign_cb)
+		
 
 		self._align_right = gtk.ToggleToolButton()
 		self._align_right.set_icon_name('gtk-justify-right')
-		self._align_right.connect("clicked", self._align_right_cb)
+		self._align_right_id = self._align_right.connect("clicked", self._align_right_cb)
 		self.insert(self._align_right, -1)
 		self._align_right.show()
+		self._abiword_canvas.connect("right-align",self._isRightAlign_cb)
 
 		self._align_fill = gtk.ToggleToolButton()
 		self._align_fill.set_icon_name('gtk-justify-fill')
-		self._align_fill.connect("clicked", self._align_fill_cb)
+		self._align_fill_id = self._align_fill.connect("clicked", self._align_fill_cb)
 		self.insert(self._align_fill, -1)
 		self._align_fill.show()
+		self._abiword_canvas.connect("justify-align",self._isFillAlign_cb)
 
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
@@ -147,12 +152,25 @@ class Toolbar(gtk.Toolbar):
 	def _align_left_cb(self, button):
 		self._abiword_canvas.align_left()
 
+	def _isLeftAlign_cb(self,abi,b):
+		self.setToggleButtonState(self._align_left,b,self._align_left_id)
+
 	def _align_center_cb(self, button):
 		self._abiword_canvas.align_center()
+
+	def _isCenterAlign_cb(self,abi,b):
+		self.setToggleButtonState(self._align_center,b,self._align_center_id)
 
 	def _align_right_cb(self, button):
 		self._abiword_canvas.align_right()
 
+	def _isRightAlign_cb(self,abi,b):
+		self.setToggleButtonState(self._align_right,b,self._align_right_id)
+
 	def _align_fill_cb(self, button):
 		self._abiword_canvas.align_justify()
+
+
+	def _isFillAlign_cb(self,abi,b):
+		self.setToggleButtonState(self._align_fill,b,self._align_fill_id)
 
