@@ -599,3 +599,19 @@
   (return-type "gboolean")
 )
 
+    
+(define-method set_show_margin
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_show_margin")
+  (return-type "gboolean")
+  (parameters
+    '("gboolean" "b")
+  )
+)
+
+    
+(define-method get_show_margin
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_show_margin")
+  (return-type "gboolean")
+)
