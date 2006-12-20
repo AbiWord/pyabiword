@@ -615,3 +615,19 @@
   (c-name "abi_widget_get_show_margin")
   (return-type "gboolean")
 )
+    
+(define-method set_olpc_selections
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_olpc_selections")
+  (return-type "gboolean")
+  (parameters
+    '("gboolean" "b")
+  )
+)
+
+    
+(define-method get_olpc_seletions
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_olpc_selections")
+  (return-type "gboolean")
+)
