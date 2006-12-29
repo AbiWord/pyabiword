@@ -631,3 +631,23 @@
   (c-name "abi_widget_get_olpc_selections")
   (return-type "gboolean")
 )
+
+ 
+(define-method get_content_all
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_content_all")
+  (return-type "gchar*")
+  (parameters
+    '("gchar*" "mimetype")
+  )
+)
+
+    
+(define-method get_content_selection
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_content_selection")
+  (return-type "gchar*")
+  (parameters
+    '("gchar*" "mimetype")
+  )
+)

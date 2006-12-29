@@ -102,7 +102,7 @@ class Toolbar(gtk.Toolbar):
 		self.insert(self._align_fill, -1)
 		self._align_fill.show()
 		self._abiword_canvas.connect("justify-align",self._isFillAlign_cb)
-
+		
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
 		separator.set_draw(True)
@@ -173,4 +173,3 @@ class Toolbar(gtk.Toolbar):
 
 	def _isFillAlign_cb(self,abi,b):
 		self.setToggleButtonState(self._align_fill,b,self._align_fill_id)
-
