@@ -35,9 +35,9 @@ class SugarAbiWord:
         hbox = gtk.HBox(False, 0)
         mainWindow.add(hbox)
         hbox.show()
-
+        print 'Pullin in Canvas \n '
 	self.abiword_canvas = Canvas()
-
+        print 'Canvas obtained \n'
 	toolbar = Toolbar(self.abiword_canvas)
 	hbox.pack_start(toolbar, False)
 	toolbar.show()

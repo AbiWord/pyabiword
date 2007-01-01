@@ -632,13 +632,13 @@
   (return-type "gboolean")
 )
 
- 
-(define-method get_content_all
+ (define-method get_content_all
   (of-object "AbiWidget")
   (c-name "abi_widget_get_content_all")
   (return-type "gchar*")
   (parameters
     '("gchar*" "mimetype")
+    '("gint*" "iLength")
   )
 )
 
@@ -649,5 +649,6 @@
   (return-type "gchar*")
   (parameters
     '("gchar*" "mimetype")
+    '("gint*" "iLength")
   )
 )
