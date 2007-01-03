@@ -26,7 +26,7 @@ _wrap_abi_widget_get_content_all (PyGObject *self, PyObject *args,
     gint iLength;
 
     if (!PyArg_ParseTupleAndKeywords(args, kwargs,
-				     "s:AbiWidget.get_content_all", kwlist,
+				     "s:AbiWidget.content", kwlist,
 				     &smime))
 	return NULL;
     bytes = abi_widget_get_content_all(ABI_WIDGET(self->obj),
@@ -45,7 +45,7 @@ _wrap_abi_widget_get_content_selection (PyGObject *self, PyObject *args,
     gint iLength;
 
     if (!PyArg_ParseTupleAndKeywords(args, kwargs,
-				     "s:AbiWidget.get_content_selection", kwlist,
+				     "s:AbiWidget.selection", kwlist,
 				     &smime))
 	return NULL;
     bytes = abi_widget_get_content_selection(ABI_WIDGET(self->obj),

@@ -632,7 +632,7 @@
   (return-type "gboolean")
 )
 
- (define-method get_content_all
+ (define-method content
   (of-object "AbiWidget")
   (c-name "abi_widget_get_content_all")
   (return-type "gchar*")
@@ -643,7 +643,7 @@
 )
 
     
-(define-method get_content_selection
+(define-method selection
   (of-object "AbiWidget")
   (c-name "abi_widget_get_content_selection")
   (return-type "gchar*")
