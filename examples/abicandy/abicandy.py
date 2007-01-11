@@ -50,6 +50,7 @@ class SugarAbiWord:
     def _delete_cb(self,me,p):
         print "Doing delete \n"
         self.abiword_canvas.save_immediate()
+        gtk.main_quit()
         
     def main(self):
         gtk.main()
