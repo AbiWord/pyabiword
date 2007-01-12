@@ -616,9 +616,9 @@
   (return-type "gboolean")
 )
     
-(define-method set_olpc_selections
+(define-method set_word_selections
   (of-object "AbiWidget")
-  (c-name "abi_widget_set_olpc_selections")
+  (c-name "abi_widget_set_word_selections")
   (return-type "gboolean")
   (parameters
     '("gboolean" "b")
@@ -626,15 +626,15 @@
 )
 
     
-(define-method get_olpc_seletions
+(define-method get_word_seletions
   (of-object "AbiWidget")
-  (c-name "abi_widget_get_olpc_selections")
+  (c-name "abi_widget_get_word_selections")
   (return-type "gboolean")
 )
 
- (define-method content
+ (define-method get_content
   (of-object "AbiWidget")
-  (c-name "abi_widget_get_content_all")
+  (c-name "abi_widget_get_content")
   (return-type "gchar*")
   (parameters
     '("gchar*" "mimetype")
@@ -643,9 +643,9 @@
 )
 
     
-(define-method selection
+(define-method get_selection
   (of-object "AbiWidget")
-  (c-name "abi_widget_get_content_selection")
+  (c-name "abi_widget_get_selection")
   (return-type "gchar*")
   (parameters
     '("gchar*" "mimetype")
