@@ -18,7 +18,6 @@
 
 ;; Enumerations and flags ...
 
-
 ;; From abiwidget.h
 
 (define-function abi_widget_new
