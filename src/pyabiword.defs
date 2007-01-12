@@ -8,6 +8,13 @@
   (gtype-id "ABI_TYPE_WIDGET")
 )
 
+(define-function init
+  (c-name "libabiword_init_noargs")
+)
+
+(define-function shutdown
+  (c-name "libabiword_shutdown")
+)
 
 ;; Enumerations and flags ...
 
