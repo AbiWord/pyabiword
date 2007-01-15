@@ -8,4 +8,4 @@ EXTRA_DIST =			\
 	NEWS			\
 	autogen.sh		\
 	examples		\
-	m4
+	python.m4

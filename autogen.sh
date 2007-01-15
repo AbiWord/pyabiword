@@ -8,7 +8,7 @@ pushd $srcdir
 REQUIRED_AUTOMAKE_VERSION=1.8
 
 PKG_NAME="PyGTK"
-ACLOCAL_FLAGS="-I `pwd`/m4 $ACLOCAL_FLAGS"
+ACLOCAL_FLAGS="-I `pwd` $ACLOCAL_FLAGS"
 
 #name of package
 PKG_NAME=${PKG_NAME:-Package}
