@@ -6,14 +6,35 @@ headers
 
 #include <gtk/gtk.h>
 #include <abiwidget.h>
+#include <xap_UnixTableWidget.h>
 
 %%
 modulename abi
 %%
 import gtk.Bin as PyGtkBin_Type
+import gtk.Button as PyGtkButton_Type
+%%
 %%
 ignore-glob
   *_get_type
+%%
+override abi_table_get_selected noargs
+static PyObject *
+_wrap_abi_table_get_selected (PyGObject *self)
+{
+    guint rows,cols;
+    abi_table_get_selected(ABITABLE_WIDGET(self->obj),&rows,&cols);
+    return Py_BuildValue("(ii)", rows, cols);
+}
+%%
+override abi_table_get_max_size noargs
+static PyObject *
+_wrap_abi_table_get_max_size(PyGObject *self)
+{
+    guint rows,cols;
+    abi_table_get_max_size(ABITABLE_WIDGET(self->obj),&rows,&cols);
+    return Py_BuildValue("(ii)", rows, cols);
+}
 %%
 override abi_widget_get_content kwargs
 static PyObject *

@@ -17,6 +17,7 @@
 import logging
 import gtk
 import pango
+import abiword
 
 class Toolbar(gtk.Toolbar):
 	def __init__(self, abiword_canvas):
@@ -103,6 +104,19 @@ class Toolbar(gtk.Toolbar):
 		self._align_fill.show()
 		self._abiword_canvas.connect("justify-align",self._isFillAlign_cb)
 		
+		self._insert_separator()
+		self._tableCreate = abiword.TableCreator()
+		self._tableCreate.set_labels("Table","Cancel")
+		self._tableCreate.show()
+		self._tableItem = gtk.ToolItem()
+		self._tableItem.add(self._tableCreate)
+		self.insert(self._tableItem, -1)
+
+		self._tableItem.show_all()
+		self._tableCreate.connect("selected",self._tableCB)
+		self._tableCreate.label().hide()
+
+		
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
 		separator.set_draw(True)
@@ -173,3 +187,6 @@ class Toolbar(gtk.Toolbar):
 
 	def _isFillAlign_cb(self,abi,b):
 		self.setToggleButtonState(self._align_fill,b,self._align_fill_id)
+
+	def _tableCB(self,abi,rows,cols):
+		self._abiword_canvas.insert_table(rows,cols)

@@ -8,6 +8,13 @@
   (gtype-id "ABI_TYPE_WIDGET")
 )
 
+(define-object TableCreator
+  (in-module "Abi")
+  (c-name "AbiTable")
+  (parent "GtkButton")
+  (gtype-id "ABITABLE_TYPE_WIDGET")
+)
+
 (define-function init
   (c-name "libabiword_init_noargs")
 )
@@ -17,6 +24,71 @@
 )
 
 ;; Enumerations and flags ...
+
+(define-function abi_table_new
+  (c-name "abi_table_new")
+  (is-constructor-of "AbiTable")
+  (return-type "GtkWidget*")
+)
+
+
+(define-method set_selected
+  (of-object "AbiTable")
+  (c-name "abi_table_set_selected")
+  (return-type "none")
+  (parameters
+    '("guint" "rows")
+    '("guint" "cols")
+  )
+)
+
+
+(define-method get_selected
+  (of-object "AbiTable")
+  (c-name "abi_table_get_selected")
+  (parameters
+    '("guint*" "rows")
+    '("guint*" "cols")
+  )
+)
+
+
+
+(define-method set_max_size
+  (of-object "AbiTable")
+  (c-name "abi_table_set_max_size")
+  (return-type "none")
+  (parameters
+    '("guint" "rows")
+    '("guint" "cols")
+  )
+)
+
+
+(define-method get_max_size
+  (of-object "AbiTable")
+  (c-name "abi_table_get_max_size")
+  (parameters
+    '("guint*" "rows")
+    '("guint*" "cols")
+  )
+)
+
+(define-method set_labels
+  (of-object "AbiTable")
+  (c-name "abi_table_set_labels")
+  (parameters
+    '("gchar*" "szTable")
+    '("gchar*" "szCancel")
+  )
+)
+
+(define-method label
+  (of-object "AbiTable")
+  (c-name "abi_table_get_label")
+  (return-type "GtkWidget*")
+)
+
 
 ;; From abiwidget.h
 
@@ -657,4 +729,14 @@
     '("gchar*" "mimetype")
     '("gint*" "iLength")
   )
+)
+
+(define-method insert_table
+  (of-object "AbiWidget")
+  (c-name "abi_widget_insert_table")
+  (return-type "gboolean")
+  (parameters
+   '("gint32" "rows")
+   '("gint32" "cols")
+   )
 )
