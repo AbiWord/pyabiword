@@ -89,6 +89,14 @@
   (return-type "GtkWidget*")
 )
 
+(define-method set_icon
+  (of-object "AbiTable")
+  (c-name "abi_table_set_icon")
+  (parameters
+    '("GtkWidget*" "icon")
+  )
+)
+
 
 ;; From abiwidget.h
 

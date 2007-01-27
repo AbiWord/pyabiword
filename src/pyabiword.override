@@ -12,6 +12,7 @@ modulename abi
 %%
 import gtk.Bin as PyGtkBin_Type
 import gtk.Button as PyGtkButton_Type
+import gtk.Widget as PyGtkWidget_Type
 %%
 %%
 ignore-glob

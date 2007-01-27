@@ -3,6 +3,7 @@ AM_CPPFLAGS = 				\
 	-Wno-long-long 			\
 	$(PYTHON_CFLAGS) 		\
 	$(PYTHON_INCLUDES) 		\
+	$(PYGTK_INCLUDES) 		\
 	$(PYGTK_CFLAGS) 		\
 	$(ABIWORD_CFLAGS)
 
