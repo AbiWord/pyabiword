@@ -115,7 +115,8 @@ class Toolbar(gtk.Toolbar):
 		self._tableItem.show_all()
 		self._tableCreate.connect("selected",self._tableCB)
 		self._tableCreate.label().hide()
-		
+
+		self._tableItem_id = self._abiword_canvas.connect("table-state",self._tableState)
 		
 		
 	def _insert_separator(self):
@@ -137,7 +138,6 @@ class Toolbar(gtk.Toolbar):
 		self._abiword_canvas.file_save()
 
 	def _isDirty_cb(self,abi,b):
-		print "isDirty",b
 		self._save.set_sensitive(b)
 
 	def _undo_cb(self, button):
@@ -191,3 +191,6 @@ class Toolbar(gtk.Toolbar):
 
 	def _tableCB(self,abi,rows,cols):
 		self._abiword_canvas.insert_table(rows,cols)
+
+	def _tableState(self,abi,b):
+		self._tableItem.set_sensitive(b)
