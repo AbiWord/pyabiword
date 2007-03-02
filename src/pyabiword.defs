@@ -748,3 +748,34 @@
    '("gint32" "cols")
    )
 )
+
+(define-method invoke_cmd
+  (of-object "AbiWidget")
+  (c-name "abi_widget_invoke_ex")
+  (return-type "gboolean")
+  (parameters
+   '("gchar*" "mthdName")
+   '("gchar*" "data")
+   '("gint32" "x")
+   '("gint32" "y")
+   )
+)
+
+
+(define-method set_font_name
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_font_name")
+  (return-type "gboolean")
+  (parameters
+   '("gchar*" "szName")
+   )
+)
+
+(define-method set_font_size
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_font_size")
+  (return-type "gboolean")
+  (parameters
+   '("gchar*" "szSize")
+   )
+)

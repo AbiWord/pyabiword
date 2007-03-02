@@ -117,7 +117,12 @@ class Toolbar(gtk.Toolbar):
 		self._tableCreate.label().hide()
 
 		self._tableItem_id = self._abiword_canvas.connect("table-state",self._tableState)
-		
+
+		self._test = gtk.ToggleToolButton()
+		self._test.set_label("test")
+		self.insert(self._test,-1)
+		self._test.connect("clicked",self._test_cb)
+		self._test.show_all()
 		
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
@@ -194,3 +199,7 @@ class Toolbar(gtk.Toolbar):
 
 	def _tableState(self,abi,b):
 		self._tableItem.set_sensitive(b)
+
+	def _test_cb(self,button):
+		self._abiword_canvas.invoke_cmd("insertData","Look at ME!!!",0,0)
+		
