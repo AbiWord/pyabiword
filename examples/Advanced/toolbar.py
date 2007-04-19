@@ -18,7 +18,7 @@ import logging
 import gtk
 import pango
 import abiword
-
+from keybindings import KeyBindings
 class Toolbar(gtk.Toolbar):
 	def __init__(self, abiword_canvas):
 		gtk.Toolbar.__init__(self)
@@ -123,6 +123,7 @@ class Toolbar(gtk.Toolbar):
 		self.insert(self._test,-1)
 		self._test.connect("clicked",self._test_cb)
 		self._test.show_all()
+
 		
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
@@ -201,5 +202,9 @@ class Toolbar(gtk.Toolbar):
 		self._tableItem.set_sensitive(b)
 
 	def _test_cb(self,button):
-		self._abiword_canvas.invoke_cmd("insertData","Look at ME!!!",0,0)
-		
+#		self._abiword_canvas.invoke_cmd("fileInsertPositionedGraphic","",0,0)
+                NewKeys = KeyBindings()
+                defKeys = NewKeys.AbiDefault()
+#		print "key defs are: ",defKeys
+		self._abiword_canvas.invoke_cmd("LoadBindings_invoke",defKeys,0,0)
+		self._abiword_canvas.invoke_cmd("SetBindings_invoke","AbiDefault",0,0)
