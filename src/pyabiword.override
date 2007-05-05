@@ -73,3 +73,28 @@ _wrap_abi_widget_get_selection (PyGObject *self, PyObject *args,
 				       smime,&iLength);
     return Py_BuildValue("(si)", bytes, iLength);
 }
+%%
+override abi_widget_get_font_names kwargs
+static PyObject *
+_wrap_abi_widget_get_font_names(PyGObject *self,  PyObject *args, PyObject* kwargs)
+{
+    const gchar** fonts, **tmp;
+    int i = 0, j;
+    PyObject *py_list;
+
+    fonts = (const gchar **)abi_widget_get_font_names(ABI_WIDGET(self->obj));
+    if (!fonts)
+        return PyTuple_New(0);
+        
+    tmp = fonts;
+    while (*tmp)
+        tmp++, i++;
+
+    py_list = PyList_New(0);
+    for (j = 0; j < i; j++)
+        PyList_Append(py_list, PyString_FromString(fonts[j]));
+
+    g_free(fonts);
+    return py_list;
+}
+

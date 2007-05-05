@@ -779,3 +779,9 @@
    '("gchar*" "szSize")
    )
 )
+
+(define-method get_font_names
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_font_names")
+  (return-type "const-gchar**")
+)
