@@ -780,7 +780,7 @@
    )
 )
 
-(define-method set_font_size
+(define-method set_font_color
   (of-object "AbiWidget")
   (c-name "abi_widget_set_font_color")
   (return-type "gboolean")
