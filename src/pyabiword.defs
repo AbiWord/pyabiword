@@ -796,3 +796,12 @@
   (c-name "abi_widget_get_font_names")
   (return-type "const-gchar**")
 )
+
+(define-method set_zoom_percentage
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_zoom_percentage")
+  (return-type "gboolean")
+  (parameters
+   '("guint32" "zoom")
+   )
+)
