@@ -780,9 +780,9 @@
    )
 )
 
-(define-method set_font_color
+(define-method set_text_color
   (of-object "AbiWidget")
-  (c-name "abi_widget_set_font_color")
+  (c-name "abi_widget_set_text_color")
   (return-type "gboolean")
   (parameters
    '("guint8" "red")
