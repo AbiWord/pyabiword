@@ -649,30 +649,6 @@
   )
 )
     
-(define-method zoom_100
-  (of-object "AbiWidget")
-  (c-name "abi_widget_zoom_100")
-  (return-type "gboolean")
-)
-    
-(define-method zoom_200
-  (of-object "AbiWidget")
-  (c-name "abi_widget_zoom_200")
-  (return-type "gboolean")
-)
-    
-(define-method zoom_50
-  (of-object "AbiWidget")
-  (c-name "abi_widget_zoom_50")
-  (return-type "gboolean")
-)
-    
-(define-method zoom_75
-  (of-object "AbiWidget")
-  (c-name "abi_widget_zoom_75")
-  (return-type "gboolean")
-)
-    
 (define-method zoom_whole
   (of-object "AbiWidget")
   (c-name "abi_widget_zoom_whole")
