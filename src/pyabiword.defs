@@ -805,3 +805,9 @@
    '("guint32" "zoom")
    )
 )
+
+(define-method get_zoom_percentage
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_zoom_percentage")
+  (return-type "guint32")
+)
