@@ -787,3 +787,30 @@
   (c-name "abi_widget_get_zoom_percentage")
   (return-type "guint32")
 )
+
+(define-method set_find_string
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_find_string")
+  (return-type "none")
+  (parameters
+   '("gchar*" "search_str")
+  )
+)
+
+(define-method find_next
+  (of-object "AbiWidget")
+  (c-name "abi_widget_find_next")
+  (return-type "gchar*")
+)
+
+(define-method get_num_pages
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_page_count")
+  (return-type "guint32")
+)
+
+(define-method get_current_page_num
+  (of-object "AbiWidget")
+  (c-name "abi_widget_get_current_page_num")
+  (return-type "guint32")
+)
