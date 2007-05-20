@@ -78,11 +78,11 @@ override abi_widget_get_font_names kwargs
 static PyObject *
 _wrap_abi_widget_get_font_names(PyGObject *self,  PyObject *args, PyObject* kwargs)
 {
-    const gchar** fonts, **tmp;
+    gchar** fonts, **tmp;
     int i = 0, j;
     PyObject *py_list;
 
-    fonts = (const gchar **)abi_widget_get_font_names(ABI_WIDGET(self->obj));
+    fonts = abi_widget_get_font_names(ABI_WIDGET(self->obj));
     if (!fonts)
         return PyTuple_New(0);
         
