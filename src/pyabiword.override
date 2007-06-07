@@ -53,7 +53,7 @@ _wrap_abi_widget_get_content (PyGObject *self, PyObject *args,
     bytes = abi_widget_get_content(ABI_WIDGET(self->obj),
 				       smime,&iLength);
 
-    return PyString_FromStringAndSize(bytes, iLength);
+    return PyString_FromStringAndSize(bytes, iLength-1 /* don't include the \0 that abi_widget_get_content does count */);
 }
 %%
 override abi_widget_get_selection kwargs
