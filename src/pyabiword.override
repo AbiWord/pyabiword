@@ -52,7 +52,8 @@ _wrap_abi_widget_get_content (PyGObject *self, PyObject *args,
 	return NULL;
     bytes = abi_widget_get_content(ABI_WIDGET(self->obj),
 				       smime,&iLength);
-    return Py_BuildValue("(si)", bytes, iLength);
+
+    return PyString_FromStringAndSize(bytes, iLength);
 }
 %%
 override abi_widget_get_selection kwargs
