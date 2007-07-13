@@ -43,7 +43,8 @@ class SugarAbiWord:
 	toolbar.show()
 
 	hbox.add(self.abiword_canvas)
-	self.abiword_canvas.load_file("")
+	self.abiword_canvas.load_file("", "")
+	#self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_ETCHED_OUT)
 	self.abiword_canvas.show()
         mainWindow.connect("delete_event",self._delete_cb)
 
