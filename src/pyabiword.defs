@@ -738,7 +738,6 @@
    )
 )
 
-
 (define-method set_font_name
   (of-object "AbiWidget")
   (c-name "abi_widget_set_font_name")
@@ -754,6 +753,15 @@
   (return-type "gboolean")
   (parameters
    '("gchar*" "szSize")
+   )
+)
+
+(define-method set_style
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_style")
+  (return-type "gboolean")
+  (parameters
+   '("gchar*" "szName")
    )
 )
 
