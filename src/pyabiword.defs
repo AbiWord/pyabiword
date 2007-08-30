@@ -64,7 +64,6 @@
   )
 )
 
-
 (define-method get_max_size
   (of-object "AbiTable")
   (c-name "abi_table_get_max_size")
@@ -97,7 +96,6 @@
   )
 )
 
-
 ;; From abiwidget.h
 
 (define-function abi_widget_new
@@ -105,7 +103,6 @@
   (is-constructor-of "AbiWidget")
   (return-type "GtkWidget*")
 )
-
 
 (define-method load_file
   (of-object "AbiWidget")
@@ -141,7 +138,6 @@
   (return-type "gboolean")
 )
 
-
 (define-method copy
   (of-object "AbiWidget")
   (c-name "abi_widget_copy")
@@ -154,13 +150,11 @@
   (return-type "gboolean")
 )
 
-
 (define-method paste
   (of-object "AbiWidget")
   (c-name "abi_widget_paste")
   (return-type "gboolean")
 )
-
 
 (define-method paste_special
   (of-object "AbiWidget")
@@ -168,13 +162,11 @@
   (return-type "gboolean")
 )
 
-
 (define-method select_all
   (of-object "AbiWidget")
   (c-name "abi_widget_select_all")
   (return-type "gboolean")
 )
-
 
 (define-method select_block
   (of-object "AbiWidget")
@@ -182,20 +174,17 @@
   (return-type "gboolean")
 )
 
-
 (define-method select_line
   (of-object "AbiWidget")
   (c-name "abi_widget_select_line")
   (return-type "gboolean")
 )
 
-
 (define-method select_word
   (of-object "AbiWidget")
   (c-name "abi_widget_select_word")
   (return-type "gboolean")
 )
-
 
 (define-method undo
   (of-object "AbiWidget")
@@ -209,7 +198,6 @@
   (return-type "gboolean")
 )
 
-
 (define-method insert_data
   (of-object "AbiWidget")
   (c-name "abi_widget_insert_data")
@@ -219,13 +207,11 @@
   )
 )
 
-
 (define-method insert_space
   (of-object "AbiWidget")
   (c-name "abi_widget_insert_space")
   (return-type "gboolean")
 )
-
 
 (define-method delete_bob
   (of-object "AbiWidget")
@@ -762,6 +748,16 @@
   (return-type "gboolean")
   (parameters
    '("gchar*" "szName")
+   )
+)
+
+(define-method insert_image
+  (of-object "AbiWidget")
+  (c-name "abi_widget_insert_image")
+  (return-type "gboolean")
+  (parameters
+   '("gchar*" "szFile")
+   '("gboolean" "positioned")
    )
 )
 
