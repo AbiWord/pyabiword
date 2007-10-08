@@ -1,5 +1,5 @@
 
-AC_INIT(pyabiword, 0.5.2)
+AC_INIT(pyabiword, 0.7.0)
 AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE
 
@@ -17,7 +17,7 @@ AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_C_CONST
 
-abi_pkg='abiword-2.5 >= 2.5.1'
+abi_pkg='abiword-2.7 >= 2.7.0'
 PKG_CHECK_MODULES(ABIWORD, "$abi_pkg")
 AC_SUBST(ABIWORD_CFLAGS)
 AC_SUBST(ABIWORD_LIBS)
