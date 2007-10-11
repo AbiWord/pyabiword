@@ -814,6 +814,15 @@
   (return-type "guint32")
 )
 
+(define-method set_current_page
+  (of-object "AbiWidget")
+  (c-name "abi_widget_set_current_page")
+  (return-type "none")
+  (parameters
+   '("guint32" "curpage")
+  )
+)
+
 (define-method get_current_page_num
   (of-object "AbiWidget")
   (c-name "abi_widget_get_current_page_num")
