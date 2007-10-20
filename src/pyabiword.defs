@@ -805,7 +805,13 @@
 (define-method find_next
   (of-object "AbiWidget")
   (c-name "abi_widget_find_next")
-  (return-type "gchar*")
+  (return-type "gboolean")
+)
+
+(define-method find_prev
+  (of-object "AbiWidget")
+  (c-name "abi_widget_find_prev")
+  (return-type "gboolean")
 )
 
 (define-method get_num_pages
