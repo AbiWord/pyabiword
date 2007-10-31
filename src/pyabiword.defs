@@ -293,12 +293,6 @@
   (return-type "gboolean")
 )
 
-(define-method file_save
-  (of-object "AbiWidget")
-  (c-name "abi_widget_file_save")
-  (return-type "gboolean")
-)
-
 (define-method remove_header
   (of-object "AbiWidget")
   (c-name "abi_widget_remove_header")
@@ -308,13 +302,6 @@
 (define-method remove_footer
   (of-object "AbiWidget")
   (c-name "abi_widget_remove_footer")
-  (return-type "gboolean")
-)
-
-
-(define-method save_immediate
-  (of-object "AbiWidget")
-  (c-name "abi_widget_save_immediate")
   (return-type "gboolean")
 )
 
