@@ -41,17 +41,17 @@ static PyObject *
 _wrap_abi_widget_get_content (PyGObject *self, PyObject *args,
 				    PyObject*kwargs)
 {
-    static char *kwlist[] = { "mimetype",NULL };
+    static char *kwlist[] = { "extension_or_mimetype", "exp_props", NULL };
     gchar *bytes;
-    gchar *smime;
+    gchar *extension_or_mimetype;
+    gchar *exp_props = 0;
     gint iLength;
 
     if (!PyArg_ParseTupleAndKeywords(args, kwargs,
-				     "s:AbiWidget.content", kwlist,
-				     &smime))
+				     "s|s:AbiWidget.content", kwlist,
+				     &extension_or_mimetype, &exp_props))
 	return NULL;
-    bytes = abi_widget_get_content(ABI_WIDGET(self->obj),
-				       smime,&iLength);
+    bytes = abi_widget_get_content(ABI_WIDGET(self->obj), exsention_or_mimetype, exp_props, &iLength);
 
     return PyString_FromStringAndSize(bytes, iLength-1 /* don't include the \0 that abi_widget_get_content does count */);
 }
@@ -61,17 +61,16 @@ static PyObject *
 _wrap_abi_widget_get_selection (PyGObject *self, PyObject *args,
 				    PyObject*kwargs)
 {
-    static char *kwlist[] = { "mimetype", NULL };
+    static char *kwlist[] = { "extension_or_mimetype", NULL };
     gchar *bytes;
-    gchar *smime;
+    gchar *extension_or_mimetype;
     gint iLength;
 
     if (!PyArg_ParseTupleAndKeywords(args, kwargs,
-				     "s:AbiWidget.selection", kwlist,
-				     &smime))
+				     "s::AbiWidget.selection", kwlist,
+				     &extension_or_mimetype))
 	return NULL;
-    bytes = abi_widget_get_selection(ABI_WIDGET(self->obj),
-				       smime,&iLength);
+    bytes = abi_widget_get_selection(ABI_WIDGET(self->obj), extension_or_mimetype ,&iLength);
     return Py_BuildValue("(si)", bytes, iLength);
 }
 %%
