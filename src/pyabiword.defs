@@ -305,12 +305,6 @@
   (return-type "gboolean")
 )
 
-(define-method save_immediate
-  (of-object "AbiWidget")
-  (c-name "abi_widget_save_immediate")
-  (return-type "gboolean")
-)
-
 (define-method select_bob 
   (of-object "AbiWidget")
   (c-name "abi_widget_select_bob")
