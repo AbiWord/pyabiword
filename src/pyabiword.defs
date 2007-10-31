@@ -673,18 +673,17 @@
   (c-name "abi_widget_get_content")
   (return-type "gchar*")
   (parameters
-    '("gchar*" "mimetype")
+    '("gchar*" "extention_or_mimetype")
     '("gint*" "iLength")
   )
 )
 
-    
 (define-method get_selection
   (of-object "AbiWidget")
   (c-name "abi_widget_get_selection")
   (return-type "gchar*")
   (parameters
-    '("gchar*" "mimetype")
+    '("gchar*" "extention_or_mimetype")
     '("gint*" "iLength")
   )
 )
