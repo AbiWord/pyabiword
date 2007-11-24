@@ -815,6 +815,9 @@
 (define-method find_next
   (of-object "AbiWidget")
   (c-name "abi_widget_find_next")
+  (parameters
+   '("gboolean" "sel_start")
+  )
   (return-type "gboolean")
 )
 
