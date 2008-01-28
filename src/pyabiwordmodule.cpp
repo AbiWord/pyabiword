@@ -20,7 +20,7 @@ DL_EXPORT(void)
 initabiword (void)
 {
     PyObject *m, *d;
-    const char *argv[] = { PACKAGE, NULL };
+    char *argv[] = { PACKAGE, NULL };
 
     init_pygobject ();
     libabiword_init (1, argv);
