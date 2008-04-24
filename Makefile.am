@@ -12,4 +12,4 @@ EXTRA_DIST =			\
 	python.m4
 
 dist-hook:
-	rm -rf `find $(distdir)/examples -name CVS`
+	rm -rf `find $(distdir)/examples -name .svn`
