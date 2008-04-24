@@ -498,7 +498,7 @@
 )
 
     
-(define-method toggle_toplne
+(define-method toggle_topline
   (of-object "AbiWidget")
   (c-name "abi_widget_toggle_topline")
   (return-type "gboolean")
