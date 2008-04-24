@@ -114,6 +114,17 @@
   )
 )
 
+(define-method load_file_from_memory
+  (of-object "AbiWidget")
+  (c-name "abi_widget_load_file_from_memory")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "extention_or_mimetype")
+    '("const-gchar*" "buf")
+    '("gint" "length")
+  )
+)
+
 (define-method align_center
   (of-object "AbiWidget")
   (c-name "abi_widget_align_center")
