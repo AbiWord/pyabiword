@@ -497,7 +497,6 @@
   (return-type "gboolean")
 )
 
-    
 (define-method toggle_topline
   (of-object "AbiWidget")
   (c-name "abi_widget_toggle_topline")
@@ -507,6 +506,18 @@
 (define-method toggle_unindent
   (of-object "AbiWidget")
   (c-name "abi_widget_toggle_unindent")
+  (return-type "gboolean")
+)
+
+(define-method toggle_bullets
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_bullets")
+  (return-type "gboolean")
+)
+
+(define-method toggle_numbering
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_numbering")
   (return-type "gboolean")
 )
     
