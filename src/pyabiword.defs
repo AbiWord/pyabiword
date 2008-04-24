@@ -680,7 +680,6 @@
   (return-type "gboolean")
 )
 
-    
 (define-method set_show_margin
   (of-object "AbiWidget")
   (c-name "abi_widget_set_show_margin")
@@ -690,7 +689,6 @@
   )
 )
 
-    
 (define-method get_show_margin
   (of-object "AbiWidget")
   (c-name "abi_widget_get_show_margin")
@@ -705,9 +703,8 @@
     '("gboolean" "b")
   )
 )
-
     
-(define-method get_word_seletions
+(define-method get_word_selections
   (of-object "AbiWidget")
   (c-name "abi_widget_get_word_selections")
   (return-type "gboolean")
