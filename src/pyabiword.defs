@@ -114,6 +114,17 @@
   )
 )
 
+(define-method load_file_from_memory
+  (of-object "AbiWidget")
+  (c-name "abi_widget_load_file_from_memory")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "extention_or_mimetype")
+    '("const-gchar*" "buf")
+    '("gint" "length")
+  )
+)
+
 (define-method align_center
   (of-object "AbiWidget")
   (c-name "abi_widget_align_center")
@@ -497,8 +508,7 @@
   (return-type "gboolean")
 )
 
-    
-(define-method toggle_toplne
+(define-method toggle_topline
   (of-object "AbiWidget")
   (c-name "abi_widget_toggle_topline")
   (return-type "gboolean")
@@ -507,6 +517,18 @@
 (define-method toggle_unindent
   (of-object "AbiWidget")
   (c-name "abi_widget_toggle_unindent")
+  (return-type "gboolean")
+)
+
+(define-method toggle_bullets
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_bullets")
+  (return-type "gboolean")
+)
+
+(define-method toggle_numbering
+  (of-object "AbiWidget")
+  (c-name "abi_widget_toggle_numbering")
   (return-type "gboolean")
 )
     
