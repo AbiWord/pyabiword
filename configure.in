@@ -1,5 +1,5 @@
 
-AC_INIT(pyabiword, 0.6.0)
+AC_INIT(pyabiword, 0.6.1)
 AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE
 
