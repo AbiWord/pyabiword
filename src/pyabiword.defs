@@ -866,3 +866,13 @@
   (c-name "abi_widget_get_current_page_num")
   (return-type "guint32")
 )
+
+(define-method render_page_to_image
+  (of-object "AbiWidget")
+  (c-name "abi_widget_render_page_to_image")
+  (return-type "GdkPixbuf*")
+  (parameters
+   '("guint32" "page")
+  )
+)
+
