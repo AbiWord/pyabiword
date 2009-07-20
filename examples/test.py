@@ -29,7 +29,7 @@ box.add(i)
 i.show()
 
 def _clicked_cb(widget, abi, i):
-    i.props.pixbuf = abi.render_page_to_image(0)
+    i.props.pixbuf = abi.render_page_to_image(1)
 
 b.connect('clicked', lambda widget: _clicked_cb(widget, abi, i))
 
