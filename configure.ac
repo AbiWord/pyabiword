@@ -2,6 +2,7 @@
 AC_INIT(pyabiword, 0.8.0)
 AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE
+AC_CONFIG_MACRO_DIRS([m4])
 
 dnl Checks for programs.
 AC_ISC_POSIX
@@ -17,7 +18,7 @@ AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_C_CONST
 
-abi_pkg='abiword-2.8 >= 2.8.0'
+abi_pkg='abiword-3.0 >= 3.0.0'
 PKG_CHECK_MODULES(ABIWORD, "$abi_pkg")
 AC_SUBST(ABIWORD_CFLAGS)
 AC_SUBST(ABIWORD_LIBS)
@@ -29,7 +30,7 @@ AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
 dnl check for pygtk
 PKG_CHECK_MODULES(PYGTK, pygtk-2.0)
 AC_SUBST(PYGTK_CFLAGS)
-AC_PATH_PROG(PYGTK_CODEGEN, pygtk-codegen-2.0, no)
+AC_PATH_PROG(PYGTK_CODEGEN, pygobject-codegen-2.0, no)
 if test "x$PYGTK_CODEGEN" = xno; then
   AC_MSG_ERROR(could not find pygtk-codegen-2.0 script)
 fi
