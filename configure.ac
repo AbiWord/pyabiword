@@ -22,6 +22,13 @@ abi_pkg='abiword-3.0 >= 3.0.0'
 PKG_CHECK_MODULES(ABIWORD, "$abi_pkg")
 AC_SUBST(ABIWORD_CFLAGS)
 AC_SUBST(ABIWORD_LIBS)
+AC_MSG_CHECKING(whether AbiWord uses Gtk+ 2.0)
+if test ! -z "`echo "$ABIWORD_LIBS" | grep gtk-3`" ; then
+   AC_MSG_RESULT(no)
+   AC_MSG_ERROR(libabiword uses Gtk+3.0. Use GObject Introspection instead)
+else
+   AC_MSG_RESULT(yes)
+fi
 
 dnl check for python
 AM_PATH_PYTHON(2.3)
